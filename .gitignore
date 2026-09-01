@@ -1,0 +1,6 @@
+# Ignore local editor folders
+.vscode/
+.DS_Store
+
+# Ignore common build artifacts
+node_modules/
