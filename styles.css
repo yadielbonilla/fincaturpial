@@ -35,7 +35,7 @@ input {
   justify-content: center;
   gap: 2rem;
   height: 56px;
-  background: #6a8d3d;
+  background: var(--orange);
   color: var(--white);
   font-size: 0.96rem;
   font-weight: 600;
@@ -221,9 +221,7 @@ input {
 .hero-section {
   position: relative;
   min-height: 720px;
-  background-image: url("https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=1800&q=80");
-  background-size: cover;
-  background-position: center;
+  background: linear-gradient(135deg, #f8f3ef 0%, #f4c7a7 45%, #f7b980 100%);
   overflow: hidden;
 }
 
@@ -231,7 +229,7 @@ input {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .hero-card {
