@@ -1,7 +1,7 @@
 :root {
-  --orange: #f66027;
-  --orange-deep: #d94d19;
-  --orange-soft: #f8a16d;
+  --orange: #f2a067;
+  --orange-deep: #e88c52;
+  --orange-soft: #f7c59a;
   --white: #ffffff;
   --ash: #f1f1f1;
   --text: #1f1f1f;
@@ -87,8 +87,8 @@ input {
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: linear-gradient(180deg, #ef5f2b 0%, #cf3d17 100%);
-  box-shadow: 0 12px 25px rgba(230, 94, 35, 0.28);
+  background: linear-gradient(180deg, #f4b07c 0%, #e68b4a 100%);
+  box-shadow: 0 12px 25px rgba(230, 141, 82, 0.28);
 }
 
 .brand-circle {
@@ -221,7 +221,7 @@ input {
 .hero-section {
   position: relative;
   min-height: 720px;
-  background: linear-gradient(135deg, #f8f3ef 0%, #f4c7a7 45%, #f7b980 100%);
+  background: linear-gradient(135deg, #fff7f1 0%, #f7d8bb 42%, #f3b88a 100%);
   overflow: hidden;
 }
 
@@ -271,7 +271,7 @@ input {
   letter-spacing: 0.04em;
   padding: 1rem 2rem;
   border-radius: 4px;
-  box-shadow: 0 12px 20px rgba(230, 94, 35, 0.22);
+  box-shadow: 0 12px 20px rgba(230, 141, 82, 0.22);
   cursor: pointer;
 }
 
