@@ -9,5 +9,17 @@ document.addEventListener('DOMContentLoaded', () => {
     adminList.textContent = adminEmails.join(', ');
   }
 
+  const currentPage = document.body.dataset.page;
+  const navLinks = document.querySelectorAll('.main-nav a');
+
+  if (currentPage) {
+    navLinks.forEach((link) => {
+      const href = link.getAttribute('href');
+      if (href && href.includes(currentPage)) {
+        link.classList.add('active');
+      }
+    });
+  }
+
   console.log('Finca Turpial local storefront is ready. Authorized admin emails configured.');
 });

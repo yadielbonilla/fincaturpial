@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Finca Turpial</title>
+    <title>Other Consumables | Finca Turpial</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Copperplate:wght@400;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body data-page="other-consumables">
     <div class="promo-bar">
       <button class="promo-arrow" aria-label="Previous offer">&lsaquo;</button>
       <span>Free Standard Shipping for Orders Over $200. <span class="promo-link">→</span></span>
@@ -29,13 +29,11 @@
         </div>
 
         <div class="header-tools">
-          <a href="#" class="account-link">Sign In / Create Account</a>
-
+          <a href="index.html" class="account-link">Home</a>
           <div class="search-wrap">
             <input type="text" aria-label="Search Finca Turpial" placeholder="Search Finca Turpial" />
             <button aria-label="Search">⌕</button>
           </div>
-
           <button class="cart-button" aria-label="Shopping cart">
             <span class="cart-icon">🛒</span>
             <span class="cart-count">0</span>
@@ -47,22 +45,53 @@
         <a href="fruits.html">FRUITS</a>
         <a href="vegetables.html">VEGETABLES</a>
         <a href="dragonfruit-plants.html">DRAGONFRUIT PLANTS</a>
-        <a href="other-consumables.html">OTHER CONSUMABLES</a>
+        <a href="other-consumables.html" class="active">OTHER CONSUMABLES</a>
         <a href="about.html">ABOUT</a>
       </nav>
     </header>
 
-    <main class="hero-section">
-      <div class="hero-card">
-        <h2>Recently Added</h2>
-        <p>Browse new products you might have missed</p>
-        <button class="shop-button">SHOP NOW</button>
-      </div>
+    <main class="catalog-page">
+      <div class="category-shell">
+        <h2 class="page-heading">Other Consumables</h2>
+        <p class="page-subtitle">Everyday essentials and pantry favorites rooted in quality and freshness.</p>
 
-      <div class="slider-controls" aria-label="Slider controls">
-        <button class="control-button" aria-label="Previous slide">&lsaquo;</button>
-        <button class="control-button pause" aria-label="Pause slider">II</button>
-        <button class="control-button" aria-label="Next slide">&rsaquo;</button>
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-image">🥭</div>
+            <div class="product-body">
+              <h3>Farm Honey</h3>
+              <p>Pure golden sweetness, ideal for tea, desserts, and breakfast.</p>
+              <div class="product-price"><span>$9.20</span><span>Natural</span></div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">🌾</div>
+            <div class="product-body">
+              <h3>Herbal Mix</h3>
+              <p>Balanced blend for tea lovers and wellness-minded homes.</p>
+              <div class="product-price"><span>$8.50</span><span>Wellness</span></div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">🥥</div>
+            <div class="product-body">
+              <h3>Coconut Flour</h3>
+              <p>Nutrient-rich, gluten-free flour for healthy recipes and baking.</p>
+              <div class="product-price"><span>$7.90</span><span>Kitchen</span></div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">🫐</div>
+            <div class="product-body">
+              <h3>Berry Jam</h3>
+              <p>Small-batch spread crafted for rich flavor and easy pairing.</p>
+              <div class="product-price"><span>$6.80</span><span>Classic</span></div>
+            </div>
+          </article>
+        </div>
       </div>
     </main>
 

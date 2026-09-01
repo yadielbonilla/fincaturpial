@@ -230,6 +230,11 @@ input {
   text-transform: uppercase;
 }
 
+.main-nav a.active,
+.main-nav a:hover {
+  color: var(--orange-deep);
+}
+
 .hero-section {
   position: relative;
   min-height: 720px;
@@ -308,6 +313,124 @@ input {
 .control-button.pause {
   font-size: 1.2rem;
   letter-spacing: 0.12em;
+}
+
+.catalog-page {
+  padding: 3rem 2rem 4rem;
+  background: #fffaf5;
+}
+
+.category-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-heading {
+  margin: 0 0 1.5rem;
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #1b1b1b;
+}
+
+.page-subtitle {
+  margin: 0 0 2rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+  max-width: 62ch;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.product-card {
+  background: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 18px;
+  box-shadow: 0 12px 26px rgba(27, 27, 27, 0.06);
+  overflow: hidden;
+}
+
+.product-image {
+  height: 180px;
+  background: linear-gradient(135deg, #f3d9bd 0%, #f2ae7d 100%);
+  display: grid;
+  place-items: center;
+  font-size: 4rem;
+}
+
+.product-body {
+  padding: 1.1rem 1rem 1.25rem;
+}
+
+.product-body h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.3rem;
+  color: #1e1e1e;
+}
+
+.product-body p {
+  margin: 0 0 0.8rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.product-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  color: var(--orange-deep);
+}
+
+.product-price span:last-child {
+  background: rgba(242, 160, 103, 0.14);
+  color: var(--orange-deep);
+  padding: 0.35rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.about-panel,
+.info-card {
+  background: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 18px;
+  padding: 1.5rem;
+  box-shadow: 0 12px 26px rgba(27, 27, 27, 0.06);
+}
+
+.info-card {
+  background: linear-gradient(180deg, #fffaf2 0%, #f6e3d0 100%);
+}
+
+.about-panel h3,
+.info-card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.about-panel p,
+.info-card p,
+.info-card li {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.info-card ul {
+  margin: 0;
+  padding-left: 1.2rem;
 }
 
 .admin-note {

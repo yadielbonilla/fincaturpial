@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Finca Turpial</title>
+    <title>About | Finca Turpial</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Copperplate:wght@400;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body data-page="about">
     <div class="promo-bar">
       <button class="promo-arrow" aria-label="Previous offer">&lsaquo;</button>
       <span>Free Standard Shipping for Orders Over $200. <span class="promo-link">→</span></span>
@@ -29,13 +29,11 @@
         </div>
 
         <div class="header-tools">
-          <a href="#" class="account-link">Sign In / Create Account</a>
-
+          <a href="index.html" class="account-link">Home</a>
           <div class="search-wrap">
             <input type="text" aria-label="Search Finca Turpial" placeholder="Search Finca Turpial" />
             <button aria-label="Search">⌕</button>
           </div>
-
           <button class="cart-button" aria-label="Shopping cart">
             <span class="cart-icon">🛒</span>
             <span class="cart-count">0</span>
@@ -48,21 +46,32 @@
         <a href="vegetables.html">VEGETABLES</a>
         <a href="dragonfruit-plants.html">DRAGONFRUIT PLANTS</a>
         <a href="other-consumables.html">OTHER CONSUMABLES</a>
-        <a href="about.html">ABOUT</a>
+        <a href="about.html" class="active">ABOUT</a>
       </nav>
     </header>
 
-    <main class="hero-section">
-      <div class="hero-card">
-        <h2>Recently Added</h2>
-        <p>Browse new products you might have missed</p>
-        <button class="shop-button">SHOP NOW</button>
-      </div>
+    <main class="catalog-page">
+      <div class="category-shell">
+        <h2 class="page-heading">About</h2>
+        <p class="page-subtitle">Finca Turpial brings together quality produce, tropical plants, and thoughtfully sourced consumables for a healthier lifestyle.</p>
 
-      <div class="slider-controls" aria-label="Slider controls">
-        <button class="control-button" aria-label="Previous slide">&lsaquo;</button>
-        <button class="control-button pause" aria-label="Pause slider">II</button>
-        <button class="control-button" aria-label="Next slide">&rsaquo;</button>
+        <div class="about-layout">
+          <section class="about-panel">
+            <h3>Our Story</h3>
+            <p>At Finca Turpial, we work with trusted growers and carefully selected products that reflect freshness, sustainability, and the rich flavor of locally inspired agriculture. We focus on produce and plant varieties that are both useful and beautiful for every home and garden.</p>
+            <p>From sweet fruits and vibrant vegetables to specialty dragonfruit plants and pantry essentials, our goal is to make healthy, high-quality living more accessible to families and food lovers alike.</p>
+          </section>
+
+          <aside class="info-card">
+            <h3>What We Offer</h3>
+            <ul>
+              <li>Fresh fruits and vegetables</li>
+              <li>Dragonfruit plants for tropical gardens</li>
+              <li>Household and consumable pantry essentials</li>
+              <li>Seasonal selections and reliable quality</li>
+            </ul>
+          </aside>
+        </div>
       </div>
     </main>
 

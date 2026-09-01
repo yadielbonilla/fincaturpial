@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Finca Turpial</title>
+    <title>Vegetables | Finca Turpial</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Copperplate:wght@400;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body data-page="vegetables">
     <div class="promo-bar">
       <button class="promo-arrow" aria-label="Previous offer">&lsaquo;</button>
       <span>Free Standard Shipping for Orders Over $200. <span class="promo-link">→</span></span>
@@ -29,13 +29,11 @@
         </div>
 
         <div class="header-tools">
-          <a href="#" class="account-link">Sign In / Create Account</a>
-
+          <a href="index.html" class="account-link">Home</a>
           <div class="search-wrap">
             <input type="text" aria-label="Search Finca Turpial" placeholder="Search Finca Turpial" />
             <button aria-label="Search">⌕</button>
           </div>
-
           <button class="cart-button" aria-label="Shopping cart">
             <span class="cart-icon">🛒</span>
             <span class="cart-count">0</span>
@@ -45,24 +43,55 @@
 
       <nav class="main-nav" aria-label="Main navigation">
         <a href="fruits.html">FRUITS</a>
-        <a href="vegetables.html">VEGETABLES</a>
+        <a href="vegetables.html" class="active">VEGETABLES</a>
         <a href="dragonfruit-plants.html">DRAGONFRUIT PLANTS</a>
         <a href="other-consumables.html">OTHER CONSUMABLES</a>
         <a href="about.html">ABOUT</a>
       </nav>
     </header>
 
-    <main class="hero-section">
-      <div class="hero-card">
-        <h2>Recently Added</h2>
-        <p>Browse new products you might have missed</p>
-        <button class="shop-button">SHOP NOW</button>
-      </div>
+    <main class="catalog-page">
+      <div class="category-shell">
+        <h2 class="page-heading">Vegetables</h2>
+        <p class="page-subtitle">Garden-picked favorites with dense flavor and nutritional value.</p>
 
-      <div class="slider-controls" aria-label="Slider controls">
-        <button class="control-button" aria-label="Previous slide">&lsaquo;</button>
-        <button class="control-button pause" aria-label="Pause slider">II</button>
-        <button class="control-button" aria-label="Next slide">&rsaquo;</button>
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-image">🥬</div>
+            <div class="product-body">
+              <h3>Organic Lettuce</h3>
+              <p>Crisp, fresh leaves ideal for salads, wraps, and smoothies.</p>
+              <div class="product-price"><span>$4.25</span><span>Fresh</span></div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">🥕</div>
+            <div class="product-body">
+              <h3>Carrot Bundle</h3>
+              <p>Sweet and crunchy roots packed with flavor and color.</p>
+              <div class="product-price"><span>$5.10</span><span>Popular</span></div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">🍅</div>
+            <div class="product-body">
+              <h3>Garden Tomato</h3>
+              <p>Rich red fruit with classic taste for sauces and slicing.</p>
+              <div class="product-price"><span>$6.00</span><span>Seasonal</span></div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">🌽</div>
+            <div class="product-body">
+              <h3>Sweet Corn</h3>
+              <p>Delicious kernels with a naturally sweet, tender bite.</p>
+              <div class="product-price"><span>$4.75</span><span>Farm Pick</span></div>
+            </div>
+          </article>
+        </div>
       </div>
     </main>
 
