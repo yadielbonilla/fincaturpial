@@ -24,6 +24,18 @@ body {
   color: var(--text);
 }
 
+.brand-text h1,
+.hero-card h2,
+.main-nav a,
+.shop-button,
+.promo-bar,
+.account-link,
+.search-wrap input,
+.admin-note strong,
+.admin-note span {
+  font-family: "Copperplate", "Copperplate Gothic", "Papyrus", serif;
+}
+
 button,
 input {
   font: inherit;
