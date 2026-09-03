@@ -246,6 +246,100 @@ function setupCatalogSearch() {
 
 function setupProductTooltips() {
   const productCards = document.querySelectorAll('.product-card[data-tooltip]');
+  const productCardList = Array.from(productCards);
+  let activeCard = null;
+
+  const positionTooltip = (card, tooltip) => {
+    const viewportPadding = 16;
+    const sideGap = 18;
+    const stackedLayout = window.innerWidth <= 760;
+    const cardRect = card.getBoundingClientRect();
+    const tooltipRect = tooltip.getBoundingClientRect();
+    const roomRight = window.innerWidth - cardRect.right - viewportPadding;
+    const roomLeft = cardRect.left - viewportPadding;
+    const roomAbove = cardRect.top - viewportPadding;
+    const roomBelow = window.innerHeight - cardRect.bottom - viewportPadding;
+    const buildCandidate = (side) => {
+      let left = viewportPadding;
+      let top = viewportPadding;
+
+      if (side === 'right') {
+        left = Math.min(cardRect.right + sideGap, window.innerWidth - tooltipRect.width - viewportPadding);
+        top = Math.min(
+          Math.max(cardRect.top + (cardRect.height - tooltipRect.height) / 2, viewportPadding),
+          window.innerHeight - tooltipRect.height - viewportPadding
+        );
+      } else if (side === 'left') {
+        left = Math.max(viewportPadding, cardRect.left - tooltipRect.width - sideGap);
+        top = Math.min(
+          Math.max(cardRect.top + (cardRect.height - tooltipRect.height) / 2, viewportPadding),
+          window.innerHeight - tooltipRect.height - viewportPadding
+        );
+      } else if (side === 'below') {
+        left = Math.min(
+          Math.max(cardRect.left + (cardRect.width - tooltipRect.width) / 2, viewportPadding),
+          window.innerWidth - tooltipRect.width - viewportPadding
+        );
+        top = Math.min(cardRect.bottom + sideGap, window.innerHeight - tooltipRect.height - viewportPadding);
+      } else {
+        left = Math.min(
+          Math.max(cardRect.left + (cardRect.width - tooltipRect.width) / 2, viewportPadding),
+          window.innerWidth - tooltipRect.width - viewportPadding
+        );
+        top = Math.max(viewportPadding, cardRect.top - tooltipRect.height - sideGap);
+      }
+
+      return {
+        side,
+        left,
+        top,
+        right: left + tooltipRect.width,
+        bottom: top + tooltipRect.height
+      };
+    };
+
+    const getOverlapScore = (candidate) => productCardList.reduce((score, otherCard) => {
+      if (otherCard === card) {
+        return score;
+      }
+
+      const otherRect = otherCard.getBoundingClientRect();
+      const overlapWidth = Math.max(0, Math.min(candidate.right, otherRect.right) - Math.max(candidate.left, otherRect.left));
+      const overlapHeight = Math.max(0, Math.min(candidate.bottom, otherRect.bottom) - Math.max(candidate.top, otherRect.top));
+      return score + (overlapWidth * overlapHeight);
+    }, 0);
+
+    const preferredSides = stackedLayout
+      ? (roomBelow >= roomAbove ? ['below', 'above', 'right', 'left'] : ['above', 'below', 'right', 'left'])
+      : (roomRight >= roomLeft ? ['right', 'left', 'above', 'below'] : ['left', 'right', 'above', 'below']);
+
+    const bestPosition = preferredSides
+      .map((side) => {
+        const candidate = buildCandidate(side);
+        return {
+          ...candidate,
+          overlapScore: getOverlapScore(candidate)
+        };
+      })
+      .sort((first, second) => first.overlapScore - second.overlapScore || preferredSides.indexOf(first.side) - preferredSides.indexOf(second.side))[0];
+
+    tooltip.dataset.side = bestPosition.side;
+    tooltip.style.left = `${Math.round(bestPosition.left)}px`;
+    tooltip.style.top = `${Math.round(bestPosition.top)}px`;
+  };
+
+  const updateActiveTooltipPosition = () => {
+    if (!activeCard) {
+      return;
+    }
+
+    const tooltip = document.getElementById(activeCard.getAttribute('aria-describedby'));
+    if (!tooltip || !tooltip.classList.contains('tooltip-visible')) {
+      return;
+    }
+
+    positionTooltip(activeCard, tooltip);
+  };
 
   productCards.forEach((card, index) => {
     const tooltipText = card.dataset.tooltip;
@@ -267,54 +361,55 @@ function setupProductTooltips() {
     card.setAttribute('tabindex', '0');
     card.setAttribute('aria-describedby', tooltipId);
     card.setAttribute('aria-label', `${title.textContent}. ${tooltipText}`);
-    card.appendChild(tooltip);
+    document.body.appendChild(tooltip);
 
     const showTooltip = () => {
+      if (activeCard && activeCard !== card) {
+        activeCard.classList.remove('tooltip-visible');
+        const activeTooltipId = activeCard.getAttribute('aria-describedby');
+        const activeTooltip = activeTooltipId ? document.getElementById(activeTooltipId) : null;
+        if (activeTooltip) {
+          activeTooltip.classList.remove('tooltip-visible');
+          activeTooltip.setAttribute('aria-hidden', 'true');
+        }
+      }
+
+      activeCard = card;
       card.classList.add('tooltip-visible');
-      tooltip.style.opacity = '1';
-      tooltip.style.transform = 'translateY(0)';
+      tooltip.classList.add('tooltip-visible');
       tooltip.setAttribute('aria-hidden', 'false');
+      positionTooltip(card, tooltip);
     };
 
     const hideTooltip = () => {
+      if (activeCard === card) {
+        activeCard = null;
+      }
+
       card.classList.remove('tooltip-visible');
-      tooltip.style.opacity = '0';
-      tooltip.style.transform = 'translateY(-8px)';
+      tooltip.classList.remove('tooltip-visible');
       tooltip.setAttribute('aria-hidden', 'true');
     };
 
-    card.addEventListener('mouseenter', () => {
-      showTooltip();
-    });
-
     card.addEventListener('pointerenter', () => {
       showTooltip();
-    });
-
-    card.addEventListener('mouseleave', () => {
-      hideTooltip();
     });
 
     card.addEventListener('pointerleave', () => {
       hideTooltip();
     });
 
-    card.addEventListener('focus', () => {
-      showTooltip();
-    });
-
     card.addEventListener('focusin', () => {
       showTooltip();
-    });
-
-    card.addEventListener('blur', () => {
-      hideTooltip();
     });
 
     card.addEventListener('focusout', () => {
       hideTooltip();
     });
   });
+
+  window.addEventListener('resize', updateActiveTooltipPosition);
+  window.addEventListener('scroll', updateActiveTooltipPosition, { passive: true });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
