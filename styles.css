@@ -3,10 +3,10 @@
   --orange-deep: #e88c52;
   --orange-soft: #f7c59a;
   --white: #ffffff;
-  --surface: #f2eeea;
-  --surface-soft: #f7f5f2;
-  --surface-strong: #ebe6e0;
-  --ash: #f1f1f1;
+  --surface: #dbd4cd;
+  --surface-soft: #e6dfd8;
+  --surface-strong: #ccc4bc;
+  --ash: #ddd7d1;
   --text: #1f1f1f;
   --muted: #4a4a4a;
   --shadow: rgba(19, 25, 18, 0.14);
@@ -193,7 +193,7 @@ input {
   display: grid;
   gap: 0.35rem;
   padding: 0.45rem;
-  background: rgba(247, 245, 242, 0.98);
+  background: rgba(230, 223, 216, 0.98);
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 12px;
   box-shadow: 0 18px 35px rgba(19, 25, 18, 0.14);
@@ -302,7 +302,7 @@ input {
   top: 130px;
   width: min(630px, 44vw);
   padding: 2.2rem 2.8rem 2.3rem;
-  background: rgba(245, 244, 242, 0.66);
+  background: rgba(223, 216, 209, 0.82);
   backdrop-filter: blur(3px);
   border-radius: 0;
   box-shadow: 0 14px 30px rgba(8, 8, 8, 0.08);
@@ -436,7 +436,7 @@ input {
   padding: 0.95rem 1rem;
   border-radius: 14px;
   border: 1px solid rgba(232, 140, 82, 0.38);
-  background: rgba(247, 245, 242, 0.98);
+  background: rgba(230, 223, 216, 0.98);
   color: var(--text);
   font-size: 0.9rem;
   line-height: 1.45;
