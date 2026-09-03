@@ -244,6 +244,79 @@ function setupCatalogSearch() {
   });
 }
 
+function setupProductTooltips() {
+  const productCards = document.querySelectorAll('.product-card[data-tooltip]');
+
+  productCards.forEach((card, index) => {
+    const tooltipText = card.dataset.tooltip;
+    const title = card.querySelector('h3');
+
+    if (!tooltipText || !title) {
+      return;
+    }
+
+    const tooltip = document.createElement('p');
+    const tooltipId = `product-tooltip-${index + 1}`;
+
+    tooltip.className = 'product-tooltip';
+    tooltip.id = tooltipId;
+    tooltip.setAttribute('role', 'tooltip');
+    tooltip.setAttribute('aria-hidden', 'true');
+    tooltip.textContent = tooltipText;
+
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('aria-describedby', tooltipId);
+    card.setAttribute('aria-label', `${title.textContent}. ${tooltipText}`);
+    card.appendChild(tooltip);
+
+    const showTooltip = () => {
+      card.classList.add('tooltip-visible');
+      tooltip.style.opacity = '1';
+      tooltip.style.transform = 'translateY(0)';
+      tooltip.setAttribute('aria-hidden', 'false');
+    };
+
+    const hideTooltip = () => {
+      card.classList.remove('tooltip-visible');
+      tooltip.style.opacity = '0';
+      tooltip.style.transform = 'translateY(-8px)';
+      tooltip.setAttribute('aria-hidden', 'true');
+    };
+
+    card.addEventListener('mouseenter', () => {
+      showTooltip();
+    });
+
+    card.addEventListener('pointerenter', () => {
+      showTooltip();
+    });
+
+    card.addEventListener('mouseleave', () => {
+      hideTooltip();
+    });
+
+    card.addEventListener('pointerleave', () => {
+      hideTooltip();
+    });
+
+    card.addEventListener('focus', () => {
+      showTooltip();
+    });
+
+    card.addEventListener('focusin', () => {
+      showTooltip();
+    });
+
+    card.addEventListener('blur', () => {
+      hideTooltip();
+    });
+
+    card.addEventListener('focusout', () => {
+      hideTooltip();
+    });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const adminList = document.getElementById('admin-list');
   if (adminList) {
@@ -263,6 +336,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   setupCatalogSearch();
+  setupProductTooltips();
   applySearchTargetFromUrl();
 
   console.log('Finca Turpial local storefront is ready. Authorized admin emails configured.');

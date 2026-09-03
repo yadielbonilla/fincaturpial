@@ -391,12 +391,22 @@ input {
 }
 
 .product-card {
+  position: relative;
   background: var(--white);
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 18px;
   box-shadow: 0 12px 26px rgba(27, 27, 27, 0.06);
   overflow: hidden;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.product-card[tabindex] {
+  cursor: default;
+}
+
+.product-card:focus-visible {
+  outline: 3px solid rgba(232, 140, 82, 0.4);
+  outline-offset: 4px;
 }
 
 .product-card-highlight {
@@ -406,11 +416,37 @@ input {
 }
 
 .product-image {
+  position: relative;
   height: 180px;
   background: linear-gradient(135deg, #f3d9bd 0%, #f2ae7d 100%);
   display: grid;
   place-items: center;
   font-size: 4rem;
+}
+
+.product-tooltip {
+  position: absolute;
+  top: 0.95rem;
+  left: 1rem;
+  right: 1rem;
+  margin: 0;
+  padding: 0.8rem 0.9rem;
+  border-radius: 14px;
+  background: rgba(31, 31, 31, 0.88);
+  color: var(--white);
+  font-size: 0.87rem;
+  line-height: 1.45;
+  box-shadow: 0 16px 26px rgba(19, 25, 18, 0.22);
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 2;
+}
+
+.product-card.tooltip-visible .product-tooltip {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .product-body {
