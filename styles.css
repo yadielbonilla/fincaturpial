@@ -1,15 +1,15 @@
 :root {
-  --orange: #f2a067;
-  --orange-deep: #e88c52;
-  --orange-soft: #f7c59a;
+  --orange: #f28c28;
+  --orange-deep: #d97415;
+  --orange-soft: #f6c28f;
   --white: #ffffff;
-  --surface: #dbd4cd;
-  --surface-soft: #e6dfd8;
-  --surface-strong: #ccc4bc;
-  --ash: #ddd7d1;
+  --surface: #221d19;
+  --surface-soft: #efe6dd;
+  --surface-strong: #141210;
+  --ash: #302823;
   --text: #1f1f1f;
-  --muted: #4a4a4a;
-  --shadow: rgba(19, 25, 18, 0.14);
+  --muted: #4f4842;
+  --shadow: rgba(0, 0, 0, 0.3);
 }
 
 * {
@@ -24,7 +24,7 @@ body {
   margin: 0;
   font-family: "Montserrat", Arial, sans-serif;
   background: var(--surface-strong);
-  color: var(--text);
+  color: #f4ede6;
 }
 
 .brand-text h1,
@@ -76,7 +76,7 @@ input {
 .site-header {
   background: var(--surface);
   padding: 1.3rem 2rem 0;
-  box-shadow: inset 0 -1px 0 rgba(49, 49, 49, 0.08);
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .top-row {
@@ -102,8 +102,8 @@ input {
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: linear-gradient(180deg, #f4b07c 0%, #e68b4a 100%);
-  box-shadow: 0 12px 25px rgba(230, 141, 82, 0.28);
+  background: var(--orange);
+  box-shadow: 0 12px 25px rgba(242, 140, 40, 0.28);
 }
 
 .brand-circle {
@@ -126,14 +126,14 @@ input {
   line-height: 0.9;
   letter-spacing: -0.06em;
   font-weight: 900;
-  color: #1d1d1d;
+  color: #f7f0e9;
   font-family: "Playfair Display", serif;
 }
 
 .brand-text span {
   font-size: 1.15rem;
   font-style: italic;
-  color: #2d2d2d;
+  color: rgba(247, 240, 233, 0.82);
   letter-spacing: 0.02em;
   margin-top: 0.2rem;
 }
@@ -145,7 +145,7 @@ input {
 }
 
 .account-link {
-  color: var(--text);
+  color: #f3ece4;
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 600;
@@ -269,7 +269,7 @@ input {
 }
 
 .main-nav a {
-  color: #1a1a1a;
+  color: #f3ece4;
   text-decoration: none;
   font-size: 0.92rem;
   font-weight: 700;
@@ -285,7 +285,7 @@ input {
 .hero-section {
   position: relative;
   min-height: 720px;
-  background: linear-gradient(135deg, #fff7f1 0%, #f7d8bb 42%, #f3b88a 100%);
+  background: #1a1613;
   overflow: hidden;
 }
 
@@ -293,7 +293,7 @@ input {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .hero-card {
@@ -302,10 +302,10 @@ input {
   top: 130px;
   width: min(630px, 44vw);
   padding: 2.2rem 2.8rem 2.3rem;
-  background: rgba(223, 216, 209, 0.82);
+  background: rgba(239, 230, 221, 0.92);
   backdrop-filter: blur(3px);
   border-radius: 0;
-  box-shadow: 0 14px 30px rgba(8, 8, 8, 0.08);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
 }
 
 .hero-card h2 {
@@ -328,14 +328,14 @@ input {
 
 .shop-button {
   border: none;
-  background: linear-gradient(180deg, var(--orange) 0%, var(--orange-deep) 100%);
+  background: var(--orange);
   color: var(--white);
   font-size: 1.05rem;
   font-weight: 800;
   letter-spacing: 0.04em;
   padding: 1rem 2rem;
   border-radius: 4px;
-  box-shadow: 0 12px 20px rgba(230, 141, 82, 0.22);
+  box-shadow: 0 12px 20px rgba(242, 140, 40, 0.22);
   cursor: pointer;
 }
 
@@ -350,8 +350,8 @@ input {
 .control-button {
   width: 58px;
   height: 52px;
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  background: rgba(20, 18, 16, 0.72);
   color: var(--white);
   font-size: 2rem;
   cursor: pointer;
@@ -377,12 +377,12 @@ input {
   font-size: clamp(2.2rem, 4vw, 4rem);
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: #1b1b1b;
+  color: #f4ede6;
 }
 
 .page-subtitle {
   margin: 0 0 2rem;
-  color: var(--muted);
+  color: rgba(244, 237, 230, 0.74);
   font-size: 1.05rem;
   max-width: 62ch;
 }
@@ -423,7 +423,7 @@ input {
 .product-image {
   position: relative;
   height: 180px;
-  background: linear-gradient(135deg, #f3d9bd 0%, #f2ae7d 100%);
+  background: var(--orange);
   display: grid;
   place-items: center;
   font-size: 4rem;
@@ -551,7 +551,7 @@ input {
 }
 
 .info-card {
-  background: linear-gradient(180deg, #fffaf2 0%, #f6e3d0 100%);
+  background: var(--surface-soft);
 }
 
 .about-panel h3,
@@ -559,6 +559,7 @@ input {
   margin-top: 0;
   margin-bottom: 1rem;
   font-size: 1.5rem;
+  color: var(--text);
 }
 
 .about-panel p,
@@ -582,7 +583,7 @@ input {
   margin: 0 auto;
   padding: 1rem 2rem 1.5rem;
   font-size: 0.9rem;
-  color: #313131;
+  color: rgba(244, 237, 230, 0.82);
 }
 
 .admin-note strong {
@@ -678,3 +679,8 @@ input {
     width: min(240px, calc(100vw - 1.5rem));
   }
 }
+
+
+
+
+
