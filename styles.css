@@ -106,15 +106,15 @@ input {
 }
 
 .brand-mark {
-  width: 144px;
-  height: 144px;
+  width: 216px;
+  height: 216px;
   display: grid;
   place-items: center;
 }
 
 .brand-circle {
   font-family: "Fredoka", "Baloo 2", "Playfair Display", sans-serif;
-  font-size: 8.25rem;
+  font-size: 12.375rem;
   font-weight: 700;
   line-height: 1;
   color: var(--accent-contrast);
