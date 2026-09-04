@@ -121,7 +121,7 @@ input {
   transform: translateY(-1px);
   background-image: url("assets/logo-fill.jpg");
   background-size: 180%;
-  background-position: 70% 25%;
+  background-position: 70% 45%;
   background-repeat: no-repeat;
   -webkit-background-clip: text;
   background-clip: text;
