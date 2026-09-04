@@ -113,9 +113,9 @@ input {
 }
 
 .brand-circle {
-  font-family: "Baloo 2", "Playfair Display", sans-serif;
+  font-family: "Fredoka", "Baloo 2", "Playfair Display", sans-serif;
   font-size: 8.25rem;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1;
   color: var(--accent-contrast);
   transform: translateY(-1px);
