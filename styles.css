@@ -120,8 +120,8 @@ input {
   color: var(--accent-contrast);
   transform: translateY(-1px);
   background-image: url("assets/logo-fill.jpg");
-  background-size: 320%;
-  background-position: 78% 20%;
+  background-size: 180%;
+  background-position: 70% 25%;
   background-repeat: no-repeat;
   -webkit-background-clip: text;
   background-clip: text;
