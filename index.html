@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Copperplate:wght@400;700&family=Baloo+2:wght@700;800&family=Fredoka:wght@600;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body data-page="index.html">
     <div class="promo-bar">
       <button class="promo-arrow" aria-label="Previous offer">&lsaquo;</button>
       <span>Free Standard Shipping for Orders Over $200. <span class="promo-link">→</span></span>
@@ -52,17 +52,161 @@
       </nav>
     </header>
 
-    <main class="hero-section">
-      <div class="hero-card">
-        <h2>Recently Added</h2>
-        <p>Browse new products you might have missed</p>
-        <button class="shop-button">SHOP NOW</button>
-      </div>
+    <main class="dashboard-page">
+      <div class="dashboard-shell">
+        <section class="dashboard-hero">
+          <h2>Welcome to Finca Turpial</h2>
+          <p>
+            A family-run farm bringing fresh fruits, garden vegetables, tropical dragonfruit plants, and
+            thoughtfully sourced pantry consumables straight from our fields to your table. Explore our
+            categories below or head to About to see the farm map.
+          </p>
+          <button class="shop-button">SHOP NOW</button>
+        </section>
 
-      <div class="slider-controls" aria-label="Slider controls">
-        <button class="control-button" aria-label="Previous slide">&lsaquo;</button>
-        <button class="control-button pause" aria-label="Pause slider">II</button>
-        <button class="control-button" aria-label="Next slide">&rsaquo;</button>
+        <section class="dashboard-section" aria-labelledby="featured-fruits">
+          <div class="dashboard-section-head">
+            <h3 id="featured-fruits">Fruits</h3>
+            <a class="view-all-link" href="fruits.html">View all fruits &rarr;</a>
+          </div>
+          <div class="preview-grid">
+            <article class="preview-card">
+              <div class="preview-emoji">🍊</div>
+              <h4>Valencia</h4>
+              <p>Juicy citrus with a rich, sunny flavor.</p>
+            </article>
+            <article class="preview-card">
+              <div class="preview-emoji">🍇</div>
+              <h4>Caviar</h4>
+              <p>Crisp, sweet grape clusters.</p>
+            </article>
+            <article class="preview-card">
+              <div class="preview-emoji">🍌</div>
+              <h4>Guineo</h4>
+              <p>Sweet, soft tropical banana.</p>
+            </article>
+            <article class="preview-card">
+              <div class="preview-emoji">⭐</div>
+              <h4>Carambola</h4>
+              <p>Lively sweet-sour star fruit.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="dashboard-section" aria-labelledby="featured-vegetables">
+          <div class="dashboard-section-head">
+            <h3 id="featured-vegetables">Vegetables</h3>
+            <a class="view-all-link" href="vegetables.html">View all vegetables &rarr;</a>
+          </div>
+          <div class="preview-grid">
+            <article class="preview-card">
+              <div class="preview-emoji">🫑</div>
+              <h4>Pimiento</h4>
+              <p>Fresh, crisp mild pepper.</p>
+            </article>
+            <article class="preview-card">
+              <div class="preview-emoji">🌶️</div>
+              <h4>Ajies</h4>
+              <p>Flavorful peppers with a kick.</p>
+            </article>
+            <article class="preview-card">
+              <div class="preview-emoji">🌿</div>
+              <h4>Cilantro</h4>
+              <p>Fragrant herb for every dish.</p>
+            </article>
+            <article class="preview-card">
+              <div class="preview-emoji">🥬</div>
+              <h4>Microgreens</h4>
+              <p>Nutrient-dense, garden-fresh greens.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="dashboard-section" aria-labelledby="featured-dragonfruit">
+          <div class="dashboard-section-head">
+            <h3 id="featured-dragonfruit">Dragonfruit Plants</h3>
+            <a class="view-all-link" href="dragonfruit-plants.html">View all plants &rarr;</a>
+          </div>
+          <div class="preview-grid">
+            <article class="preview-card">
+              <div class="preview-emoji">🌵</div>
+              <h4>Robles Red</h4>
+              <p>Vigorous, best-selling red variety.</p>
+            </article>
+            <article class="preview-card">
+              <div class="preview-emoji">🌴</div>
+              <h4>Zamorano</h4>
+              <p>Reliable and beginner-friendly.</p>
+            </article>
+            <article class="preview-card">
+              <div class="preview-emoji">🪴</div>
+              <h4>Zebra</h4>
+              <p>Striped stems, strong roots.</p>
+            </article>
+            <article class="preview-card">
+              <div class="preview-emoji">🌞</div>
+              <h4>Laverne Red</h4>
+              <p>Thrives in warm, sunny patios.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="dashboard-section" aria-labelledby="featured-other">
+          <div class="dashboard-section-head">
+            <h3 id="featured-other">Other Consumables</h3>
+            <a class="view-all-link" href="other-consumables.html">View all consumables &rarr;</a>
+          </div>
+          <div class="preview-grid">
+            <article class="preview-card">
+              <div class="preview-emoji">🍯</div>
+              <h4>Raw Honey</h4>
+              <p>Unfiltered, naturally sweet.</p>
+            </article>
+            <article class="preview-card">
+              <div class="preview-emoji">🧃</div>
+              <h4>Juices</h4>
+              <p>Fresh pressed daily refreshers.</p>
+            </article>
+            <article class="preview-card">
+              <div class="preview-emoji">🌼</div>
+              <h4>Vanilla</h4>
+              <p>Aromatic flavor for baking.</p>
+            </article>
+            <article class="preview-card">
+              <div class="preview-emoji">🌺</div>
+              <h4>Flor de Jamaica</h4>
+              <p>Tart, colorful hibiscus tea.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="dashboard-section" aria-labelledby="quick-nav">
+          <div class="dashboard-section-head">
+            <h3 id="quick-nav">Explore Finca Turpial</h3>
+          </div>
+          <div class="quick-nav-grid">
+            <a class="quick-nav-card" href="fruits.html">
+              <span class="quick-nav-emoji">🍊</span>
+              Fruits
+            </a>
+            <a class="quick-nav-card" href="vegetables.html">
+              <span class="quick-nav-emoji">🥬</span>
+              Vegetables
+            </a>
+            <a class="quick-nav-card" href="dragonfruit-plants.html">
+              <span class="quick-nav-emoji">🌵</span>
+              Dragonfruit Plants
+            </a>
+            <a class="quick-nav-card" href="other-consumables.html">
+              <span class="quick-nav-emoji">🍯</span>
+              Other Consumables
+            </a>
+            <a class="quick-nav-card" href="about.html">
+              <span class="quick-nav-emoji">🗺️</span>
+              About &amp; Farm Map
+            </a>
+          </div>
+        </section>
       </div>
     </main>
 

@@ -412,6 +412,70 @@ function setupProductTooltips() {
   window.addEventListener('scroll', updateActiveTooltipPosition, { passive: true });
 }
 
+const ZOOM_STORAGE_KEY = 'ft-page-zoom';
+const ZOOM_MIN = 80;
+const ZOOM_MAX = 150;
+const ZOOM_STEP = 10;
+const ZOOM_DEFAULT = 100;
+
+function getStoredZoom() {
+  const stored = parseInt(window.localStorage.getItem(ZOOM_STORAGE_KEY), 10);
+  if (Number.isNaN(stored)) {
+    return ZOOM_DEFAULT;
+  }
+
+  return Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, stored));
+}
+
+function applyZoom(level) {
+  document.documentElement.style.setProperty('--page-zoom', `${level / 100}`);
+  document.body.style.zoom = `${level}%`;
+
+  const indicator = document.querySelector('.zoom-level');
+  if (indicator) {
+    indicator.textContent = `${level}%`;
+  }
+}
+
+function setupZoomControl() {
+  if (document.querySelector('.zoom-control')) {
+    return;
+  }
+
+  const control = document.createElement('div');
+  control.className = 'zoom-control';
+  control.setAttribute('role', 'group');
+  control.setAttribute('aria-label', 'Page zoom controls');
+  control.innerHTML = `
+    <button type="button" class="zoom-btn zoom-out" aria-label="Zoom out">&minus;</button>
+    <button type="button" class="zoom-btn zoom-reset" aria-label="Reset zoom">&#8635;</button>
+    <span class="zoom-level" aria-live="polite">100%</span>
+    <button type="button" class="zoom-btn zoom-in" aria-label="Zoom in">+</button>
+  `;
+  document.body.appendChild(control);
+
+  let currentZoom = getStoredZoom();
+  applyZoom(currentZoom);
+
+  const updateZoom = (level) => {
+    currentZoom = Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, level));
+    window.localStorage.setItem(ZOOM_STORAGE_KEY, String(currentZoom));
+    applyZoom(currentZoom);
+  };
+
+  control.querySelector('.zoom-in').addEventListener('click', () => {
+    updateZoom(currentZoom + ZOOM_STEP);
+  });
+
+  control.querySelector('.zoom-out').addEventListener('click', () => {
+    updateZoom(currentZoom - ZOOM_STEP);
+  });
+
+  control.querySelector('.zoom-reset').addEventListener('click', () => {
+    updateZoom(ZOOM_DEFAULT);
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const adminList = document.getElementById('admin-list');
   if (adminList) {
@@ -433,6 +497,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupCatalogSearch();
   setupProductTooltips();
   applySearchTargetFromUrl();
+  setupZoomControl();
 
   console.log('Finca Turpial local storefront is ready. Authorized admin emails configured.');
 });
