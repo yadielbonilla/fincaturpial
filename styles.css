@@ -106,15 +106,15 @@ input {
 }
 
 .brand-mark {
-  width: 96px;
-  height: 96px;
+  width: 144px;
+  height: 144px;
   display: grid;
   place-items: center;
 }
 
 .brand-circle {
   font-family: "Playfair Display", serif;
-  font-size: 5.5rem;
+  font-size: 8.25rem;
   font-weight: 800;
   line-height: 1;
   color: var(--accent-contrast);
