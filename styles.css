@@ -121,6 +121,21 @@ input {
   font-weight: 800;
   color: var(--accent-contrast);
   transform: translateY(-1px);
+  background-image: url("assets/logo-fill.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Fallback for browsers without background-clip: text support */
+@supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+  .brand-circle {
+    background-image: none;
+    color: var(--accent-contrast);
+  }
 }
 
 .brand-text {
