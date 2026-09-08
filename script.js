@@ -28,7 +28,11 @@ const catalogItems = [
   { name: 'Juices', category: 'Other Consumables', page: 'other-consumables.html' },
   { name: 'Vanilla', category: 'Other Consumables', page: 'other-consumables.html' },
   { name: 'Flor de Jamaica', category: 'Other Consumables', page: 'other-consumables.html' },
-  { name: 'Other Flowers', category: 'Other Consumables', page: 'other-consumables.html' }
+  { name: 'Other Flowers', category: 'Other Consumables', page: 'other-consumables.html' },
+  { name: 'T-shirts', category: 'Merch', page: 'merch.html' },
+  { name: 'Hats', category: 'Merch', page: 'merch.html' },
+  { name: 'Bags', category: 'Merch', page: 'merch.html' },
+  { name: 'Stickers', category: 'Merch', page: 'merch.html' }
 ];
 
 function normalizeValue(value) {
@@ -413,8 +417,8 @@ function setupProductTooltips() {
 }
 
 const ZOOM_STORAGE_KEY = 'ft-page-zoom';
-const ZOOM_MIN = 80;
-const ZOOM_MAX = 150;
+const ZOOM_MIN = 60;
+const ZOOM_MAX = 125;
 const ZOOM_STEP = 10;
 const ZOOM_DEFAULT = 100;
 
